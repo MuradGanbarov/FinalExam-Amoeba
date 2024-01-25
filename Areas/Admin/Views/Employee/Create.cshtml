@@ -1,0 +1,59 @@
+﻿@model EmployeeCreateVM
+<div class="col-md-6 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Employee Create</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Name">Name</label>
+                    <input asp-for="Name" class="form-control" placeholder="Name">
+                    <span asp-validation-for="Name"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Surname">Surname</label>
+                    <input asp-for="Surname" class="form-control" placeholder="Surname">
+                    <span asp-validation-for="Surname"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description">Description</label>
+                    <input asp-for="Description" class="form-control" placeholder="Description">
+                    <span asp-validation-for="Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Photo">Photo</label>
+                    <input asp-for="Photo" class="form-control" placeholder="Photo" accept="image/*">
+                    <span asp-validation-for="Photo"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Twitter">Twitter</label>
+                    <input asp-for="Twitter" class="form-control" placeholder="Twitter">
+                    <span asp-validation-for="Twitter"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Instagram">Instagram</label>
+                    <input asp-for="Instagram" class="form-control" placeholder="Instagram">
+                    <span asp-validation-for="Instagram"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Facebook">Facebook</label>
+                    <input asp-for="Facebook" class="form-control" placeholder="Facebook">
+                    <span asp-validation-for="Facebook"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LinkedIn">LinkedIn</label>
+                    <input asp-for="LinkedIn" class="form-control" placeholder="LinkedIn">
+                    <span asp-validation-for="LinkedIn"></span>
+                </div>
+                <div class="form-group">
+                    <select asp-for="PositionId" asp-items="new SelectList(Model.Positions,nameof(Position.Id),nameof(Position.Name))">
+                        <option hidden disabled value="PositionId">Choose Position</option>
+                    </select>
+                    <span asp-validation-for="PositionId"></span>
+                </div>
+                <button type="submit" class="btn btn-primary me-2">Submit</button>
+                <a asp-action="index" asp-controller="position" class="btn btn-light">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
